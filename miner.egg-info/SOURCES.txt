@@ -1,0 +1,9 @@
+LICENSE
+setup.py
+miner/__init__.py
+miner/signature_search.py
+miner.egg-info/PKG-INFO
+miner.egg-info/SOURCES.txt
+miner.egg-info/dependency_links.txt
+miner.egg-info/requires.txt
+miner.egg-info/top_level.txt

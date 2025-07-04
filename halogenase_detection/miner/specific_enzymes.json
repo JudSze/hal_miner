@@ -1,0 +1,84 @@
+{
+    "vanadium-dependent": {
+        "selective-VCPO": [191, 295],
+        "AmVBPO": {
+            "accession": "WP_012161787",
+            "positions": [139, 206, 308, 341, 363, 399, 401, 425, 428, 513, 520, 598],
+            "signature": "ECCCDEFRKHHD"
+        },
+        "AnVBPO2": {
+            "accession": "",
+            "positions": [41, 77, 117, 126, 371, 374, 382, 445, 450, 451, 452, 503, 531, 517, 604, 638],
+            "signature": "CCCCWKRHSGHCRHCC"
+        },
+        "ZgVIPO": [261, 329, 351, 358, 408, 414]
+    },
+    "flavin-dependent": {
+        "AetF": {
+            "accession": "A0A861B9Z9",
+            "positions": [183, 196, 199, 200, 216, 219, 373, 500, 523, 587],
+            "signature": "LLLEMPTQSY"
+        }
+    },
+    "dimetal-carboxylate": {
+        "CylC": {
+            "accession": "ARU81117.1",
+            "positions": [102, 135, 136, 139, 283, 310, 313, 314, 317],
+            "signature": "EQEHEHDEH"
+        }
+    },
+    "sam-dependent": {
+        "flA4": {
+            "accession": "CDP39161.1",
+            "positions": [16, 77, 80, 156, 158],
+            "signature": "DYTFS"
+        },
+        "flA(PtaU1)": {
+            "accession": "OPY51785.1",
+            "positions": [60, 88, 144, 266, 267, 268, 269],
+            "signature": "WRWYYGG"
+        },
+        "SalL": {
+            "accession": "2Q6I",
+            "positions": [8, 11, 12, 45, 70, 75, 129, 131, 188, 239, 240],
+            "signature": "FDVFYTWGNSR"
+        },
+        "flA": {
+            "accession": "2C2W",
+            "positions": [77, 80, 156, 158],
+            "signature": "YTFS"
+        },
+        "flA1": {
+            "accession": "W0W999",
+            "positions": [16, 50, 158, 216],
+            "signature": "DWSN"
+        }
+    },
+    "nnhfe-dependent": {
+        "HctB": {
+            "accession": "",
+            "positions": [114, 115, 140, 224, 226],
+            "signature": "VYNER"
+        },
+        "CytC3": {
+            "accession": "",
+            "positions": [62, 68, 102, 104, 106, 108, 116, 118, 120, 123, 125, 131, 148, 150, 236, 240, 253, 259],
+            "signature": "KYREFKDHAFHQTWSHRR"
+        },
+        "SyrB2": {
+            "accession": "",
+            "positions": [113, 116, 118, 121, 123, 143, 145, 231, 235, 248, 254],
+            "signature": "THAFNTWSHRR"
+        },
+        "AdaV": {
+            "accession": "AKQ99303.1",
+            "positions": [106, 177, 182, 194, 196, 197, 198, 201, 203, 234, 237, 252, 269, 271, 273],
+            "signature": "PRRHGIQGQNRHFFY"
+        },
+        "BesD": {
+            "accession": "WP_014151497",
+            "positions": [74, 117, 118, 119, 120, 134, 137, 140, 204, 219, 221, 238, 239],
+            "signature": "R---EHHDHNTWT"
+        }
+    }
+}
