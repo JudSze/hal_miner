@@ -29,6 +29,11 @@
             "accession": "ARU81117.1",
             "positions": [102, 135, 136, 139, 283, 310, 313, 314, 317],
             "signature": "EQEHEHDEH"
+        },
+        "NocO": {
+            "accession": "AKL71648.1",
+            "positions": [],
+            "signature": ""
         }
     },
     "sam-dependent": {

@@ -4,9 +4,6 @@ import json
 import pyhmmer
 
 from halogenase_detection.motif_db import motifs
-from halogenase_detection.categorization.family_categorization import (
-    EnzymeFamily
-)
 
 def get_family_specifics(enzyme_family):
     """Load positions and signatures for a specific enzyme family
@@ -100,8 +97,3 @@ def search_motif(hits, family, motif):
             motifs.append(protein)
 
     return motif_matches
-
-def categorise_across_families(fasta):
-    enzymes = EnzymeFamily(fasta)
-
-

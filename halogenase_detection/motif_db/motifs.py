@@ -21,7 +21,6 @@ class Profiles:
     vhpo_iodoperoxidases = "halogenase_detection/phmm_db/VHPO_VIPO.hmm"
     dimetal_carboxylate = "halogenase_detection/phmm_db/dimetal-carboxylate.hmm"
 
-
 # DOI: 10.1039/D0CS01551B
 FDHs = {
     "flavin_binding": {"signature": "G.G..G",
