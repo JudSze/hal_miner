@@ -14,6 +14,7 @@ class Profiles:
     nhfe_variant_B = "halogenase_detection/phmm_db/NHFe_variant_B.hmm"
     sam_chlorinases = "halogenase_detection/phmm_db/SAM_chlorinase.hmm"
     sam_fluorinases = "halogenase_detection/phmm_db/SAM_fluorinase.hmm"
+    vhpo_general = "halogenase_detection/phmm_db/VHPO_general.hmm"
     vhpo_selective_chloroperoxidases = "halogenase_detection/phmm_db/VHPO_VCPO_selective.hmm"
     vhpo_non_selective_chloroperoxidases = "halogenase_detection/phmm_db/VHPO_VCPO_nonselective.hmm"
     vhpo_bromoperoxidases = "halogenase_detection/phmm_db/VHPO_VBPO.hmm"

@@ -8,7 +8,8 @@ from halogenase_detection.motif_db.motifs import (
     VIPO,
     SAM,
     DIMETAL,
-    FDHs
+    FDHs,
+    NONHEME_IRON
 )
 
 from signature_search import (
@@ -18,12 +19,12 @@ from signature_search import (
 )
 
 class FlavinDependent:
-    def __init__(self):
-        self.fasta = str
+    def __init__(self, fasta):
+        self.fasta = fasta
         self.general_hits = align_to_phmm(Profiles.fdh_all_conventional, self.fasta)
         self.unconventional_hits = align_to_phmm(Profiles.fdh_unconventional, self.fasta)
 
-    def motif_based_categorization(self):
+    def fdh_motif_based_categorization(self):
         motif_matches = []
         all_matches = []
 
@@ -37,27 +38,28 @@ class FlavinDependent:
         return [protein for protein, count in complete_matches.items() if count == 3]
 
 class DimetalCarboxylate:
-    def __init__(self):
-        self.fasta = str
+    def __init__(self, fasta):
+        self.fasta = fasta
         self.dimetal_hits = align_to_phmm(Profiles.dimetal_carboxylate, self.fasta)
         self.dimetal_motif_matches = search_motif(self.dimetal_hits, DIMETAL, "second_motif")
 
 class SAMDependent:
-    def __init__(self):
-        self.fasta = str
+    def __init__(self, fasta):
+        self.fasta = fasta
         self.chlorinase_hits = align_to_phmm(Profiles.sam_chlorinases, self.fasta)
         self.fluorinase_hits = align_to_phmm(Profiles.sam_fluorinases, self.fasta)
         self.fluorinase_motif_matches = search_motif(self.fluorinase_hits, SAM, "c_terminal_motif")
 
 class VanadiumDependent:
-    def __init__(self):
-        self.fasta = str
+    def __init__(self, fasta):
+        self.fasta = fasta
+        self.general_hits = align_to_phmm(Profiles.vhpo_general)
         self.brominase_hits = align_to_phmm(Profiles.bromoperoxidases, self.fasta)
         self.iodinase_hits = align_to_phmm(Profiles.iodoperoxidases, self.fasta)
         self.selective_chloroperoxidase_hits = align_to_phmm(Profiles.selective_chloroperoxidases, self.fasta)
         self.non_selective_chloroperoxidase_hits = align_to_phmm(Profiles.non_selective_chloroperoxidases, self.fasta)
 
-    def categorize_brominases(self):
+    def vhpo_categorize_brominases(self):
         brominases = []
         vbpo_cat_1 = get_catalytic_residues(self.brominase_hits, VBPO["first_active_site"]["region"])
         vbpo_cat_2 = get_catalytic_residues(self.brominase_hits, VBPO["second_active_site"]["region"])
@@ -67,7 +69,7 @@ class VanadiumDependent:
                 brominases.append
         return brominases
 
-    def intermol_categorize_brominases(self):
+    def vhpo_intermol_categorize_brominases(self):
         brominanses_intermol = []
         molecular_bridges = get_catalytic_residues(self.brominase_hits, VBPO["intermolecular-bridges"]["region"])
         for protein, signature in molecular_bridges.items():
@@ -77,7 +79,7 @@ class VanadiumDependent:
 
         return molecular_bridges
 
-    def categorize_iodinases(self):
+    def vhpo_categorize_iodinases(self):
         iodinases = []
         catalytic_residues = get_catalytic_residues(self.iodinase_hits, VIPO["catalytic_residues"]["region"])
         for protein, signature in catalytic_residues.items():
@@ -86,7 +88,7 @@ class VanadiumDependent:
 
         return iodinases
 
-    def categorize_selective_chlorinases(self):
+    def vhpo_categorize_selective_chlorinases(self):
         selective_chlorinases = []
         catalytic_residues = get_catalytic_residues(self.selective_chloroperoxidase_hits, VCPO["selectivity_residues"]["region"])
         for protein, signature in catalytic_residues.items():
@@ -94,3 +96,27 @@ class VanadiumDependent:
                 selective_chlorinases.append(protein.decode("utf-8"))
 
         return selective_chlorinases
+
+class NonHemeIronDependent:
+    def __init__(self, fasta):
+        self.fasta = fasta
+        self.variant_a_hits = align_to_phmm(Profiles.nhfe_variant_A, self.fasta)
+        self.variant_b_hits = align_to_phmm(Profiles.nhfe_variant_B, self.fasta)
+        self.indole_alkaloid_hits = align_to_phmm(Profiles.nhfe_indole_alkaloid, self.fasta)
+        self.nucleotide_hits = align_to_phmm(Profiles.nhfe_nucleotide, self.fasta)
+
+    def nonheme_halogenase_catalytic_triad(self, hits):
+        return search_motif(hits, NONHEME_IRON, "halogenase")
+
+    def nonheme_non_halogenase_catalytic_triad(self, hits):
+        return search_motif(hits, NONHEME_IRON, "non_halogenase")
+
+class EnzymeFamily(FlavinDependent, DimetalCarboxylate, SAMDependent, VanadiumDependent, NonHemeIronDependent):
+    def __init__(self, fasta):
+        self.fasta = fasta
+        self.non_hemes = NonHemeIronDependent(fasta)
+        self.vanadium_dependent = VanadiumDependent(fasta)
+        self.dimetal_carboxylate = DimetalCarboxylate(fasta)
+        self.flavin_dependent = FlavinDependent(fasta)
+        self.sam_dependent = SAMDependent(fasta)
+

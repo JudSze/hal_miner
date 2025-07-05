@@ -5,10 +5,7 @@ import pyhmmer
 
 from halogenase_detection.motif_db import motifs
 from halogenase_detection.categorization.family_categorization import (
-    FlavinDependent,
-    DimetalCarboxylate,
-    SAMDependent,
-    VanadiumDependent
+    EnzymeFamily
 )
 
 def get_family_specifics(enzyme_family):
@@ -104,7 +101,7 @@ def search_motif(hits, family, motif):
 
     return motif_matches
 
-def categorise_across_families():
-    pass
+def categorise_across_families(fasta):
+    enzymes = EnzymeFamily(fasta)
 
 
