@@ -1,15 +1,29 @@
 import re
 
-PROFILES = {
-    "selective_chloroperoxidases": "/home/szenei/hal_miner/halogenase_detection/phmm_db/VHPO_VCPO_selective.hmm",
-    "non-selective_chloroperoxidases": "/home/szenei/hal_miner/halogenase_detection/phmm_db/VHPO_VCPO_nonselective.hmm",
-    "bromoperoxidases": "/home/szenei/hal_miner/halogenase_detection/phmm_db/VHPO_VBPO.hmm",
-    "iodoperoxidases": "halogenase_detection/phmm_db/VHPO_VIPO.hmm"
-}
+class Profiles:
+    fdh_all_conventional = "halogenase_detection/phmm_db/FDH_all_conventional.hmm"
+    fdh_unconventional = "halogenase_detection/phmm_db/FDH_unconventional.hmm"
+    fdh_cycline_orsellinic = "halogenase_detection/phmm_db/FDH_cycline_orsellinic.hmm"
+    fdh_pyrrole = "halogenase_detection/phmm_db/FDH_pyrrole.hmm"
+    fdh_trp_5 = "halogenase_detection/phmm_db/FDH_trp_5.hmm"
+    fdh_trp_6_7 = "halogenase_detection/phmm_db/FDH_trp_6_7.hmm"
+    fdh_tyrosine = "halogenase_detection/phmm_db/FDH_tyrosine-like_hpg.hmm"
+    nhfe_indole_alkaloid = "halogenase_detection/phmm_db/NHFe_indole_alkaloid.hmm"
+    nhfe_nucleotide = "halogenase_detection/phmm_db/NHFe_nucleotide.hmm"
+    nhfe_variant_A = "halogenase_detection/phmm_db/NHFe_variant_A.hmm"
+    nhfe_variant_B = "halogenase_detection/phmm_db/NHFe_variant_B.hmm"
+    sam_chlorinases = "halogenase_detection/phmm_db/SAM_chlorinase.hmm"
+    sam_fluorinases = "halogenase_detection/phmm_db/SAM_fluorinase.hmm"
+    vhpo_selective_chloroperoxidases = "halogenase_detection/phmm_db/VHPO_VCPO_selective.hmm"
+    vhpo_non_selective_chloroperoxidases = "halogenase_detection/phmm_db/VHPO_VCPO_nonselective.hmm"
+    vhpo_bromoperoxidases = "halogenase_detection/phmm_db/VHPO_VBPO.hmm"
+    vhpo_iodoperoxidases = "halogenase_detection/phmm_db/VHPO_VIPO.hmm"
+    dimetal_carboxylate = "halogenase_detection/phmm_db/dimetal-carboxylate.hmm"
+
 
 # DOI: 10.1039/D0CS01551B
 FDHs = {
-    "flavin-binding": {"signature": "G.G..G",
+    "flavin_binding": {"signature": "G.G..G",
                        "region": list(range(0, 100))
                        },
     "no_monoox": {"signature": "W.W.I.",
@@ -23,7 +37,7 @@ FDHs = {
 
 # doi/full/10.1021/acscatal.2c01184
 SAM = {
-    "c_terminal_motig": {"signature": "(RNA{2}|RNG{2}|Y{2}[GA]{2})",
+    "c_terminal_motif": {"signature": "(RNA{2}|RNG{2}|Y{2}[GA]{2})",
                          "region": list(range(200, 290))
                          },
 }

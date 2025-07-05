@@ -1,9 +1,15 @@
 import re
-import pyhmmer
 import json
 
+import pyhmmer
+
 from halogenase_detection.motif_db import motifs
-from motifs import PROFILES, VBPO_ACTIVE_SITE_CONTAINING
+from halogenase_detection.categorization.family_categorization import (
+    FlavinDependent,
+    DimetalCarboxylate,
+    SAMDependent,
+    VanadiumDependent
+)
 
 def get_family_specifics(enzyme_family):
     """Load positions and signatures for a specific enzyme family
@@ -50,7 +56,7 @@ def get_catalytic_residues(hits, catalytic_positions):
             aligned = dict(iter_target_match(ali))
             try:
                 signature = [aligned[x] for x in catalytic_positions]
-                signatures[hit.name] = signature
+                signatures[hit.name] = "".join(signature)
             except KeyError:
                 print("Domain likely too short")
     return signatures
@@ -88,3 +94,17 @@ def compare_target_to_known(hmm_path, seq_path, family = None, specifics = None,
             return hits, signature
 
     return hits
+
+def search_motif(hits, family, motif):
+    motif_matches = []
+    signatures = get_catalytic_residues(hits, family[motif]["region"])
+    for protein, signature in signatures.items():
+        if re.search(family[motif]["signature"], signature):
+            motifs.append(protein)
+
+    return motif_matches
+
+def categorise_across_families():
+    pass
+
+
