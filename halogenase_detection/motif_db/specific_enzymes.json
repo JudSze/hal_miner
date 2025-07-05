@@ -11,7 +11,11 @@
             "positions": [41, 77, 117, 126, 371, 374, 382, 445, 450, 451, 452, 503, 531, 517, 604, 638],
             "signature": "CCCCWKRHSGHCRHCC"
         },
-        "ZgVIPO": [261, 329, 351, 358, 408, 414]
+        "ZgVIPO": {
+            "accession": "",
+            "positions": [261, 329, 351, 358, 408, 414],
+            "signature": "YRFHRH"
+        }
     },
     "flavin-dependent": {
         "AetF": {
