@@ -27,11 +27,15 @@ FDHs = {
                        "region": list(range(0, 100))
                        },
     "no_monoox": {"signature": "W.W.I.",
-                  "region": list(range(206, 212))
+                  "region": list(range(100, 400))
                   },
     "tunnel_line": {"signature": "F.*P.*S.G",
                     "region": list(range(280, 305))
-                    }
+                    },
+    "unvonv_flavin_binding": {"signature": "G.G..A",
+                              "region": list(range(0, 100))},
+    "unconv_broad_motif": {"signature": "F.*P.*S.*G",
+                           "region": list(range(10, 500))}
 }
 
 
@@ -87,9 +91,9 @@ VBPO = {
                                "second_motif": "C....D...C",
                                "region": list(range(100, 425))
                                },
-    "intramolecular_bridges":  {"first_signature": "C.P.P",
-                               "second_signature": "I.*C.*LT.EGE.NK",
-                               "third_signature": "C.G..TG...C",
+    "intramolecular_bridges":  {"first_motif": "C.P.P",
+                               "second_motif": "I.*C.*LT.EGE.NK",
+                               "third_motif": "C.G..TG...C",
                                "region": list(range(100, 425))
                                },
 }

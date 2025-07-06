@@ -26,17 +26,19 @@ class FlavinDependent:
         self.unconventional_hits = align_to_phmm(motifs.Profiles.fdh_unconventional, self.fasta)
 
     def fdh_motif_based_categorization(self):
-        motif_matches = []
-        all_matches = []
+        no_monoox_matches = search_motif(self.general_hits, FDHs, "no_monoox")
+        tunnel_line_matches = search_motif(self.general_hits, FDHs, "tunnel_line")
 
-        for motif in FDHs:
-            motif_matches.append(search_motif(self.general_hits, FDHs, motif))
+        both_motif_matches = list(set(no_monoox_matches) & set(tunnel_line_matches))
+        only_tunnel_line_matches = set(no_monoox_matches) - set(tunnel_line_matches)
 
-        for motif_match in motif_matches:
-            all_matches.append(motif_match.keys())
+        return {"both_motifs": both_motif_matches, "only_tunnel_line": only_tunnel_line_matches}
 
-        complete_matches = Counter(all_matches)
-        return [protein for protein, count in complete_matches.items() if count == 3]
+    def fdh_unconventional_motif_based_categorization(self):
+        first_motif = search_motif(self.unconventional_hits, FDHs, "unconv_broad_motif")
+        second_motif = search_motif(self.unconventional_hits, FDHs, "unconv_broad_motif")
+
+        return {"flavin_binding": first_motif, "tunnel": second_motif}
 
 class DimetalCarboxylate:
     def __init__(self, fasta):
@@ -70,7 +72,7 @@ class VanadiumDependent:
             try:
                 if (re.search(VBPO["first_active_site"]["signature"], vbpo_cat_1[protein])
                     and re.search(VBPO["second_active_site"]["signature"], vbpo_cat_2[protein])):
-                    brominases.append(protein)
+                    brominases.append(protein.decode("utf-8"))
             except KeyError:
                 print("protein not in matches")
         return brominases
@@ -81,7 +83,7 @@ class VanadiumDependent:
         for protein, signature in molecular_bridges.items():
             if (re.search(VBPO["intermolecular_bridges"]["first_motif"], signature)
                 or re.search(VBPO["intermolecular_bridges"]["second_motif"], signature)):
-                brominanses_intermol.append(protein)
+                brominanses_intermol.append(protein.decode("utf-8"))
 
         return brominanses_intermol
 

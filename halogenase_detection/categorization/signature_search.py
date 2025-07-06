@@ -4,6 +4,7 @@ import json
 import pyhmmer
 
 from halogenase_detection.motif_db import motifs
+from halogenase_detection.motif_db.motifs import VBPO
 
 def get_family_specifics(enzyme_family):
     """Load positions and signatures for a specific enzyme family
@@ -94,6 +95,12 @@ def search_motif(hits, family, motif):
     signatures = get_catalytic_residues(hits, family[motif]["region"])
     for protein, signature in signatures.items():
         if re.search(family[motif]["signature"], signature):
-            motifs.append(protein)
+            motif_matches.append(protein.decode("utf-8"))
 
     return motif_matches
+
+# def vbpo_intramolecular_bridge_check():
+#     intramol_motifs = dict.fromkeys(VBPO["intramolecular_bridges"])
+#     intramol_motifs.pop('region')
+
+#     for motif in motifs.VBPO:
