@@ -26,11 +26,11 @@ FDHs = {
     "flavin_binding": {"signature": "G.G..G",
                        "region": list(range(0, 100))
                        },
-    "no_monoox": {"signature": "W.W.I.",
-                  "region": list(range(100, 400))
+    "no_monoox": {"signature": "W.W.I",
+                  "region": list(range(206, 212))
                   },
-    "tunnel_line": {"signature": "F.*P.*S.G",
-                    "region": list(range(280, 305))
+    "tunnel_line": {"signature": "F.*P.*S.*G",
+                    "region": list(range(280, 350))
                     },
     "unvonv_flavin_binding": {"signature": "G.G..A",
                               "region": list(range(0, 100))},

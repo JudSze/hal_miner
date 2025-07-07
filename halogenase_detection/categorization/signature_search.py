@@ -16,9 +16,9 @@ def get_family_specifics(enzyme_family):
             non-heme-fe (Non-heme iron alphaketoglutarate-dependent),
             dimetal-carboxylate
     """
-    with open("src/miner/metadata.json") as enzyme_info:
+    with open("halogenase_detection/motif_db/specific_enzymes.json") as enzyme_info:
         family_info = json.load(enzyme_info)
-        return family_info[f"{enzyme_family}"]
+    return family_info[f"{enzyme_family}"]
 
 def align_to_phmm(hmm_path, seq_path):
     """Align sequences against a pHMM and save the hits
@@ -99,8 +99,15 @@ def search_motif(hits, family, motif):
 
     return motif_matches
 
-# def vbpo_intramolecular_bridge_check():
-#     intramol_motifs = dict.fromkeys(VBPO["intramolecular_bridges"])
-#     intramol_motifs.pop('region')
+def compare_to_enzyme(hits, family, enzyme, strict=False):
+    motif_matches = []
+    target_enzyme = get_family_specifics(family)
+    signatures = get_catalytic_residues(hits, target_enzyme[enzyme]["positions"])
+    if strict:
+        for protein, signature in signatures.items():
+            if re.search(family[enzyme]["signature"], signature):
+                motif_matches.append(protein.decode("utf-8"))
 
-#     for motif in motifs.VBPO:
+        return motif_matches
+
+    return signatures

@@ -19,7 +19,7 @@ res.vanadium_dependent.vhpo_intermol_categorize_brominases()
 intramolecular_matches = []
 for protein in res.vanadium_dependent.brominase_hits:
     if re.search(VBPO["intramolecular_bridges"]["first_motif"]):
-    intramolecular_matches = (res.vanadium_dependent.brominase_hits, VBPO, "intramolecular_bridges")
+        intramolecular_matches = (res.vanadium_dependent.brominase_hits, VBPO, "intramolecular_bridges")
 intramolecular_matches
 
 l = dict.fromkeys(VBPO["intramolecular_bridges"])
