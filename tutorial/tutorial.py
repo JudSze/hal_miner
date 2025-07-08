@@ -27,3 +27,5 @@ l.pop('region')
 l
 
 VBPO["intramolecular_bridges"].keys()
+
+from halogenase_detection.motif_db import specific

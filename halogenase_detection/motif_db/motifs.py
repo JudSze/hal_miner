@@ -1,3 +1,4 @@
+# do predictive regexes, strict or loose mode
 import re
 
 class Profiles:
@@ -80,6 +81,7 @@ VCPO = {
 
 # VBPO
 # doi.org/10.1016/j.bioorg.2012.05.003
+# active site and vanadium binding site should be noted
 VBPO = {
     "first_active_site": {"signature": "K...H...RPEA",
                           "region": list(range(300, 350))
@@ -91,8 +93,8 @@ VBPO = {
                                "second_motif": "C....D...C",
                                "region": list(range(100, 425))
                                },
-    "intramolecular_bridges":  {"first_motif": "C.P.P",
-                               "second_motif": "I.*C.*LT.EGE.NK",
+    "intramolecular_bridges":  {"first_motif": "C.P.P", # look for structures to figure if they are shifted among the nonmatches
+                               "second_motif": "I.*C.*LT.EGE.NK", # hmm visualization tool for retrieving the pHMM positions, include statistics
                                "third_motif": "C.G..TG...C",
                                "region": list(range(100, 425))
                                },
