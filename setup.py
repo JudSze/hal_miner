@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="halogenase_detection",
-    version="0.1.8",
+    name="halogenase_miner",
+    version="0.1.9",
     description="A Python package to identify categorize and mine for halogenases",
     url="https://github.com/JudSze/hal_miner",
     author="Judit Szenei",

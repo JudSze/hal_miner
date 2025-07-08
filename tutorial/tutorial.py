@@ -1,10 +1,10 @@
 import re
-from halogenase_detection.categorization.signature_search import (
+from halogenase_miner.categorization.signature_search import (
     get_catalytic_residues,
     search_motif
 )
-from halogenase_detection.categorization.family_categorization import EnzymeFamily
-from halogenase_detection.motif_db.motifs import VBPO
+from halogenase_miner.categorization.family_categorization import EnzymeFamily
+from halogenase_miner.motif_db.motifs import VBPO
 
 res = EnzymeFamily("test/fdh_unconventional.fasta")
 
@@ -28,4 +28,4 @@ l
 
 VBPO["intramolecular_bridges"].keys()
 
-from halogenase_detection.motif_db import specific
+from halogenase_miner.motif_db import specific
