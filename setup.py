@@ -1,13 +1,19 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="halogenase_detection",
-    version="0.1.0",
+    version="0.1.8",
     description="A Python package to identify categorize and mine for halogenases",
     url="https://github.com/JudSze/hal_miner",
     author="Judit Szenei",
     author_email="szenei@dtu.dk",
     license="Affero",
-    packages=["miner"],
-    install_requires=["pyhmmer", "pandas"]
+    packages=find_packages(),
+    install_requires=["pyhmmer", "pandas"],
+    package_data={
+    'halogenase_miner': [
+        'motif_db/specific_enzymes.json',
+        'phmm_db/*.hmm',
+    ],
+},
 )
