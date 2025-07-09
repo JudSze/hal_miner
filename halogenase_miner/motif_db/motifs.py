@@ -11,7 +11,7 @@ class Profiles:
     fdh_tyrosine = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/FDH_tyrosine-like_hpg.hmm')
     nhfe_indole_alkaloid = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/NHFe_indole_alkaloid.hmm')
     nhfe_nucleotide = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/NHFe_nucleotide.hmm')
-    nhfe_variant_A = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/NHFe_variant_A.hmm')
+    nhfe_small_amino_acid = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/NHFe_small_amino_acids.hmm')
     nhfe_variant_B = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/NHFe_variant_B.hmm')
     sam_chlorinases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/SAM_chlorinase.hmm')
     sam_fluorinases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/SAM_fluorinase.hmm')
@@ -54,11 +54,13 @@ SAM = {
 # worth looking at the alignment.
 NONHEME_IRON = {
     "halogenase": {"signature": "H.[GA]",
-                   "motif": list(range(150, 350))
+                   "region": list(range(100, 180))
                    },
     "non_halogenase": {"signature": "H.[DE]",
-                       "motif": list(range(150, 350))
-                       }
+                       "region": list(range(100, 150))
+                       },
+    "nucleotide": {"signature": "H.[GA]",
+                   "region": list(range(15, 50))}
 }
 
 # DIMETAL-CARBOXYLATE

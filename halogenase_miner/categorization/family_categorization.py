@@ -108,16 +108,19 @@ class VanadiumDependent:
 class NonHemeIronDependent:
     def __init__(self, fasta):
         self.fasta = fasta
-        self.variant_a_hits = align_to_phmm(motifs.Profiles.nhfe_variant_A, self.fasta)
         self.variant_b_hits = align_to_phmm(motifs.Profiles.nhfe_variant_B, self.fasta)
         self.indole_alkaloid_hits = align_to_phmm(motifs.Profiles.nhfe_indole_alkaloid, self.fasta)
         self.nucleotide_hits = align_to_phmm(motifs.Profiles.nhfe_nucleotide, self.fasta)
+        self.amino_acid_hits = align_to_phmm(motifs.Profiles.nhfe_small_amino_acid, self.fasta)
 
     def nonheme_halogenase_catalytic_triad(self, hits):
         return search_motif(hits, NONHEME_IRON, "halogenase")
 
     def nonheme_non_halogenase_catalytic_triad(self, hits):
         return search_motif(hits, NONHEME_IRON, "non_halogenase")
+
+    def nucleotide_catalytic_triad(self, hits):
+        return search_motif(hits, NONHEME_IRON, "nucleotide")
 
 class EnzymeFamily(FlavinDependent, DimetalCarboxylate, SAMDependent, VanadiumDependent, NonHemeIronDependent):
     def __init__(self, fasta):
