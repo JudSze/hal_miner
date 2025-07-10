@@ -122,6 +122,9 @@ class NonHemeIronDependent:
     def nucleotide_catalytic_triad(self, hits):
         return search_motif(hits, NONHEME_IRON, "nucleotide")
 
+    def unique_variant_b_motif(self, hits):
+        return search_motif(hits, NONHEME_IRON, "unique_variant_b")
+
 class EnzymeFamily(FlavinDependent, DimetalCarboxylate, SAMDependent, VanadiumDependent, NonHemeIronDependent):
     def __init__(self, fasta):
         self.fasta = fasta

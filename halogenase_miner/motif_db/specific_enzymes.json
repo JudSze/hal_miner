@@ -20,8 +20,63 @@
     "flavin-dependent": {
         "AetF": {
             "accession": "A0A861B9Z9",
+            "profile": "FDH_unconventaional",
             "positions": [183, 196, 199, 200, 216, 219, 373, 500, 523, 587],
             "signature": "LLLEMPTQSY"
+        },
+        "BorH": {
+            "accession": "M9QSI0",
+            "profile": "FDH_conventional",
+            "positions": [32, 33, 57, 60, 295, 296, 395, 398, 404, 408], 
+            "signature": ""
+        },
+        "BrvH": {
+            "accession": "6FRL",
+            "profile": "FDH_conventional",
+            "positions": [32, 57, 60, 295, 297, 298, 400, 401], 
+            "signature": ""
+        },
+        "CtcP": {
+            "accession": "AEI98659.1",
+            "profile": "FDH_conventional",
+            "positions": [18, 21, 23, 24, 27, 32, 34, 55, 58, 106, 109, 110, 114, 117, 157, 184, 214, 217, 258, 260, 261, 262, 364, 389],
+            "signature": ""
+        },
+        "FasV": {
+            "accession": "8ZOP",
+            "profile": "FDH_conventional",
+            "positions": [29, 30, 33, 57, 76, 75, 134, 198, 295],
+            "signature": ""
+        },
+        "MalA": {
+            "accession": "L0E155",
+            "profile": "FDH_conventional",
+            "positions": [30, 57, 207, 209, 296, 305, 344],
+            "signature": ""
+        },
+        "mibH": {
+            "accession": "5UAO",
+            "profile": "FDH_trp_5",
+            "positions": [75, 353, 355],
+            "signature": ""
+        },
+        "mpy16": {
+            "accession": "J7H1A1",
+            "profile": "FDH_pyrrole",
+            "positions": [62, 319, 322, 363],
+            "signature": ""
+        },
+        "PltA": {
+            "accession": "Q4KCZ0",
+            "profile": "FDH_pyrrole",
+            "positions": [28, 112, 117, 121, 130, 131, 132, 134, 135, 153, 156, 158, 160, 194, 230, 26, 269, 270, 271, 288],
+            "signature": "",
+        },
+        "bmp2": {
+            "accession": "AKJ75108.1",
+            "profile": "FDH_pyrrole",
+            "positions": [62, 319, 323, 363],
+            "signature": "KYFA"
         }
     },
     "dimetal-carboxylate": {

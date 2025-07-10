@@ -60,7 +60,9 @@ NONHEME_IRON = {
                        "region": list(range(100, 150))
                        },
     "nucleotide": {"signature": "H.[GA]",
-                   "region": list(range(15, 50))}
+                   "region": list(range(15, 50))},
+    "unique_variant_b": {"signature": "H.S.P",
+                         "region": list(range(200, 250))}
 }
 
 # DIMETAL-CARBOXYLATE
