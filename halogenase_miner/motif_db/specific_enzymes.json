@@ -99,7 +99,7 @@
         },
         "flA(PtaU1)": {
             "accession": "OPY51785.1",
-            "positions": [60, 88, 144, 266, 267, 268, 269],
+            "positions": [50, 78, 156, 278, 279, 280, 281],
             "signature": "WRWYYGG"
         },
         "SalL": {
@@ -109,8 +109,8 @@
         },
         "flA": {
             "accession": "2C2W",
-            "positions": [77, 80, 156, 158],
-            "signature": "YTFS"
+            "positions": [16, 21, 23, 50, 77, 80, 156, 158, 211, 214, 216, 255, 269, 271, 280],
+            "signature": "DDSWYTFSDFNFSRA"
         },
         "flA1": {
             "accession": "W0W999",
@@ -121,28 +121,38 @@
     "nnhfe-dependent": {
         "HctB": {
             "accession": "",
-            "positions": [114, 115, 140, 224, 226],
+            "positions": [123, 146, 140, 236, 238],
             "signature": "VYNER"
-        },
-        "CytC3": {
-            "accession": "",
-            "positions": [62, 68, 102, 104, 106, 108, 116, 118, 120, 123, 125, 131, 148, 150, 236, 240, 253, 259],
-            "signature": "KYREFKDHAFHQTWSHRR"
         },
         "SyrB2": {
             "accession": "",
-            "positions": [113, 116, 118, 121, 123, 143, 145, 231, 235, 248, 254],
+            "positions": [118, 121, 123, 126, 128, 148, 150, 236, 240, 253, 259],
             "signature": "THAFNTWSHRR"
-        },
-        "AdaV": {
-            "accession": "AKQ99303.1",
-            "positions": [106, 177, 182, 194, 196, 197, 198, 201, 203, 234, 237, 252, 269, 271, 273],
-            "signature": "PRRHGIQGQNRHFFY"
         },
         "BesD": {
             "accession": "WP_014151497",
-            "positions": [74, 117, 118, 119, 120, 134, 137, 140, 204, 219, 221, 238, 239],
-            "signature": "R---EHHDHNTWT"
+            "positions": [64, 107, 121, 125, 240, 257, 259, 297, 298],
+            "signature": ""
+        },
+        "AdaV": {
+            "accession": "AKQ99303.1",
+            "positions": [8, 20, 22, 23, 24, 27, 29, 60, 63, 78, 95, 97, 98, 99, 125, 128, 129],
+            "signature": ""
+        },
+        "CtNHT": {
+            "accession": "WP_217394979.1",
+            "positions": [20, 63, 95, 96, 97, 125, 128, 129, 130],
+            "signature": "HRVVFVGLR"
+        },
+        "CurA": {
+            "accession": "",
+            "positions": [71, 72, 105, 109, 118, 121, 125, 148, 150, 163, 234, 240, 253, 259],
+            "signature": ""
+        },
+        "CytC3": {
+            "accession": "",
+            "positions": [65, 71, 105, 107, 109, 111, 119, 121, 123, 126, 128, 134, 148, 150, 236, 253, 259],
+            "signature": ""
         }
     }
 }
