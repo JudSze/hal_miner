@@ -132,7 +132,7 @@
             "signature": "DWSN"
         }
     },
-    "nnhfe-dependent": {
+    "nhfe-dependent": {
         "HctB": {
             "accession": "",
             "profile": "NHFe_variant_B.hmm",

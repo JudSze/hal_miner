@@ -44,7 +44,8 @@ class DimetalCarboxylate:
     def __init__(self, fasta):
         self.fasta = fasta
         self.dimetal_hits = align_to_phmm(motifs.Profiles.dimetal_carboxylate, self.fasta)
-        self.dimetal_motif_matches = search_motif(self.dimetal_hits, DIMETAL, "second_motif")
+        self.dimetal_second_motif_matches = search_motif(self.dimetal_hits, DIMETAL, "second_motif")
+        self.dimetal_first_motif_matches = search_motif(self.dimetal_hits, DIMETAL, "first_motif")
 
 class SAMDependent:
     def __init__(self, fasta):
