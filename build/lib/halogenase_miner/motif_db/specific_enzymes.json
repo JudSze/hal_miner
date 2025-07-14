@@ -8,7 +8,7 @@
             "signature": "DFR"
         },
         "AnVBPO2": {
-            "accession": "HE598751",
+            "accession": "",
             "positions": [41, 77, 117, 126, 371, 374, 382, 445, 450, 451, 452, 503, 531, 517, 604, 638],
             "signature": "CCCCWKRHSGHCRHCC"
         },
@@ -19,7 +19,7 @@
             "signature": "YRFHRH"
         },
         "CVBPO": {
-            "accession": "O81959",
+            "accession": "",
             "profile": "VHPO_VBPO.hmm",
             "positions": [323],
             "signature": "R"
@@ -36,49 +36,49 @@
             "accession": "M9QSI0",
             "profile": "FDH_all_conventional.hmm",
             "positions": [32, 33, 57, 60, 295, 296, 395, 398, 404, 408], 
-            "signature": "VPKVESYYEF"
+            "signature": ""
         },
         "BrvH": {
             "accession": "6FRL",
             "profile": "FDH_conventional,hmm",
             "positions": [32, 57, 60, 295, 297, 298, 400, 401], 
-            "signature": "IKIETSMF"
+            "signature": ""
         },
         "CtcP": {
             "accession": "AEI98659.1",
             "profile": "FDH_conventional.hmm",
             "positions": [18, 21, 23, 24, 27, 32, 34, 55, 58, 106, 109, 110, 114, 117, 157, 184, 214, 217, 258, 260, 261, 262, 364, 389],
-            "signature": "DHPRVIQKFHVRDQPVTLRVRESW"
+            "signature": ""
         },
         "FasV": {
             "accession": "8ZOP",
             "profile": "FDH_conventional.hmm",
-            "positions": [29, 30, 33, 57, 77, 134, 198, 295],
-            "signature": "ESTKFSIL"
+            "positions": [29, 30, 33, 57, 76, 75, 134, 198, 295],
+            "signature": ""
         },
         "MalA": {
             "accession": "L0E155",
             "profile": "FDH_conventional.hmm",
             "positions": [30, 57, 207, 209, 296, 305, 344],
-            "signature": "SKWWSRF"
+            "signature": ""
         },
         "mibH": {
             "accession": "5UAO",
             "profile": "FDH_trp_5.hmm",
             "positions": [75, 353, 355],
-            "signature": "KPE"
+            "signature": ""
         },
         "mpy16": {
             "accession": "J7H1A1",
             "profile": "FDH_pyrrole.hmm",
             "positions": [62, 319, 322, 363],
-            "signature": "KSVW"
+            "signature": ""
         },
         "PltA": {
             "accession": "Q4KCZ0",
             "profile": "FDH_pyrrole.hmm",
-            "positions": [26, 28, 29, 30, 32, 35, 44, 45, 112, 117, 121, 130, 131, 132, 134, 135, 153, 156, 158, 160, 194, 230, 269, 270, 271, 288, 291, 312, 315, 318, 321, 329, 337, 363],
-            "signature": "EFERHEVGRAEVFQVELRVIAWRENETFPSVREW"
+            "positions": [28, 112, 117, 121, 130, 131, 132, 134, 135, 153, 156, 158, 160, 194, 230, 26, 269, 270, 271, 288],
+            "signature": ""
         },
         "bmp2": {
             "accession": "AKJ75108.1",
@@ -134,13 +134,13 @@
     },
     "nhfe-dependent": {
         "HctB": {
-            "accession": "AAY42394.1",
+            "accession": "",
             "profile": "NHFe_variant_B.hmm",
             "positions": [123, 146, 140, 236, 238],
             "signature": "VYNER"
         },
         "SyrB2": {
-            "accession": "Q9RBY6",
+            "accession": "",
             "profile": "NHFe_variant_B.hmm",
             "positions": [118, 121, 123, 126, 128, 148, 150, 236, 240, 253, 259],
             "signature": "THAFNTWSHRR"
@@ -149,13 +149,13 @@
             "accession": "WP_014151497",
             "profile": "NHFe_small_amino_acids.hmm",
             "positions": [64, 107, 121, 125, 240, 257, 259, 297, 298],
-            "signature": "REHDHNTWW"
+            "signature": ""
         },
         "AdaV": {
             "accession": "AKQ99303.1",
             "profile": "NHFe_nucleotide.hmm",
             "positions": [8, 20, 22, 23, 24, 27, 29, 60, 63, 78, 95, 97, 98, 99, 125, 128, 129],
-            "signature": "RHGIQGQNRHVFAYIRF"
+            "signature": ""
         },
         "CtNHT": {
             "accession": "WP_217394979.1",
@@ -164,16 +164,16 @@
             "signature": "HRVVFVGLR"
         },
         "CurA": {
-            "accession": "3NNJ",
+            "accession": "",
             "profile": "NHFe_variant_B.hmm",
-            "positions": [71, 72, 105, 109, 118, 121, 125, 148, 150, 163, 234, 240, 242, 253, 257, 259],
-            "signature": "YDHFLHSSWMFHSRVR"
+            "positions": [71, 72, 105, 109, 118, 121, 125, 148, 150, 163, 234, 240, 253, 259],
+            "signature": ""
         },
         "CytC3": {
-            "accession": "3GJA",
+            "accession": "",
             "profile": "NHFe_variant_B.hmm",
-            "positions": [65, 71, 105, 107, 109, 111, 119, 121, 123, 126, 128, 134, 148, 150, 236, 240, 253, 259],
-            "signature": "KYREFKDHAFHQTWSHRR"
+            "positions": [65, 71, 105, 107, 109, 111, 119, 121, 123, 126, 128, 134, 148, 150, 236, 253, 259],
+            "signature": ""
         }
     }
 }
