@@ -36,3 +36,5 @@ You will find the name of the enzymes with more information, including the role 
 If you are using this workflow, please cite the source.
 
 _Credits to Simon Shaw for providing a scalable solution and setting software development standards for the workflow in antiSMASH. The package is built on [PyHMMER (Larralde et al., 2022), a Python library binding to HMMER (Eddy, 2011)](https://pyhmmer.readthedocs.io/en/stable/index.html)._
+
+__Citation__

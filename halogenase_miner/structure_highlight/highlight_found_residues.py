@@ -19,9 +19,14 @@ for i, res_num in enumerate(residue_numbers):
 atoms['b_factor'] = atoms['residue_number'].map(color_map)
 
 ppdb.df['ATOM'] = atoms
-ppdb.df['b_factor']
+ppdb.df['ATOM']
 
 ppdb.to_pdb(path='modified_test.pdb',
            records=['ATOM', 'HETATM', 'OTHERS'],
            append_newline=True)
 
+# Loading from AlphaFold
+from biopandas.mmcif import PandasMmcif
+
+ppdb = PandasMmcif().fetch_mmcif(uniprot_id="Q5VSL9", source="alphafold2-v4")
+ppdb.df['ATOM']
