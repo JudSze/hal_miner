@@ -21,6 +21,7 @@ class Profiles:
     vhpo_bromoperoxidases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/VHPO_VBPO.hmm')
     vhpo_iodoperoxidases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/VHPO_VIPO.hmm')
     dimetal_carboxylate = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/dimetal-carboxylate.hmm')
+    copper_dependent = pkg_resources.resource_filename('halogenase_miner', "phmm_db/copper-dependent.hmm")
 
 # DOI: 10.1039/D0CS01551B
 FDHs = {
@@ -108,4 +109,15 @@ VIPO = {
     "catalytic_residues": {"signature": "YRFHRH",
                            "region": [261, 329, 351, 358, 408, 414]
                            }
+}
+
+# Copper-dependent halogenase
+# doi.org/10.1038/s41586-024-08362-4
+# two HxxHC motifs, putative metal binding sites
+# regioselective iodination, thiocyanation, selenocyanation
+COPPER = { "first_motif": {"signature": "H..HC",
+                           "region": list(range(65, 80))
+                           },
+            "second_motif": {"signature": "H..HC",
+                             "region": list(range(95, 110))}
 }

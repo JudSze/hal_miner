@@ -4,9 +4,12 @@ from halogenase_miner.categorization.signature_search import (
     search_motif
 )
 from halogenase_miner.categorization.family_categorization import EnzymeFamily
-from halogenase_miner.motif_db.motifs import VBPO
+from halogenase_miner.motif_db.motifs import VBPO, COPPER
 
-res = EnzymeFamily("test/fdh_unconventional.fasta")
+res = EnzymeFamily("ApnU_homologs.fasta")
+
+len(search_motif(res.copper_dependent.hits, COPPER, "first_motif"))
+len(search_motif(res.copper_dependent.hits, COPPER, "second_motif"))
 
 # Get overview based on the active sites and other catalytic residues
 res.vanadium_dependent.vhpo_categorize_selective_chlorinases()
@@ -24,8 +27,5 @@ intramolecular_matches
 
 l = dict.fromkeys(VBPO["intramolecular_bridges"])
 l.pop('region')
-l
 
 VBPO["intramolecular_bridges"].keys()
-
-from halogenase_miner.motif_db import specific

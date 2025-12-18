@@ -10,7 +10,8 @@ from halogenase_miner.motif_db.motifs import (
     SAM,
     DIMETAL,
     FDHs,
-    NONHEME_IRON
+    NONHEME_IRON,
+    COPPER
 )
 
 from halogenase_miner.categorization.signature_search import (
@@ -126,6 +127,19 @@ class NonHemeIronDependent:
     def unique_variant_b_motif(self, hits):
         return search_motif(hits, NONHEME_IRON, "unique_variant_b")
 
+class CopperDependent:
+    def __init__(self, fasta):
+        self.fasta = fasta
+        self.hits = align_to_phmm(motifs.Profiles.copper_dependent, self.fasta)
+
+    def copper_binding_motifs(self):
+        first_motif_matches = search_motif(self.hits, COPPER, "first_motif")
+        second_motif_matches = search_motif(self.hits, COPPER, "second_motif")
+
+        both_motif_matches = list(set(first_motif_matches) & set(second_motif_matches))
+
+        return both_motif_matches
+
 class EnzymeFamily(FlavinDependent, DimetalCarboxylate, SAMDependent, VanadiumDependent, NonHemeIronDependent):
     def __init__(self, fasta):
         self.fasta = fasta
@@ -134,4 +148,5 @@ class EnzymeFamily(FlavinDependent, DimetalCarboxylate, SAMDependent, VanadiumDe
         self.dimetal_carboxylate = DimetalCarboxylate(fasta)
         self.flavin_dependent = FlavinDependent(fasta)
         self.sam_dependent = SAMDependent(fasta)
+        self.copper_dependent = CopperDependent(fasta)
 
