@@ -6,10 +6,20 @@ from halogenase_miner.categorization.signature_search import (
 from halogenase_miner.categorization.family_categorization import EnzymeFamily
 from halogenase_miner.motif_db.motifs import VBPO, COPPER
 
-res = EnzymeFamily("ApnU_homologs.fasta")
+res = EnzymeFamily("/home/szenei/hal_miner/copper-dependent_hits.fasta")
+test_coppers=res.copper_dependent.copper_binding_motifs(mode="strict")
+test_coppers
 
-len(search_motif(res.copper_dependent.hits, COPPER, "first_motif"))
-len(search_motif(res.copper_dependent.hits, COPPER, "second_motif"))
+first_motif = search_motif(res.copper_dependent.hits, COPPER, "first_motif")
+second_motif = search_motif(res.copper_dependent.hits, COPPER, "second_motif")
+
+both_motifs = list(set(first_motif) & set(second_motif))
+len(both_motifs)
+
+
+with open("copper-dependent_both_motifs.txt", "w") as f:
+    for accession in both_motifs:
+        f.write(f"{accession}\n")
 
 # Get overview based on the active sites and other catalytic residues
 res.vanadium_dependent.vhpo_categorize_selective_chlorinases()

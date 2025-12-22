@@ -1,9 +1,9 @@
 import re
-from collections import Counter
+from typing import Literal
+from Bio import SeqIO
 
 from halogenase_miner.motif_db import motifs
 from halogenase_miner.motif_db.motifs import (
-    Profiles,
     VBPO,
     VCPO,
     VIPO,
@@ -132,11 +132,21 @@ class CopperDependent:
         self.fasta = fasta
         self.hits = align_to_phmm(motifs.Profiles.copper_dependent, self.fasta)
 
-    def copper_binding_motifs(self):
-        first_motif_matches = search_motif(self.hits, COPPER, "first_motif")
-        second_motif_matches = search_motif(self.hits, COPPER, "second_motif")
+    def copper_binding_motifs(self, mode: Literal["strict", "loose"]="loose"):
+        if mode=="loose":
+            both_motif_matches = []
+            whole_fasta = SeqIO.parse(open(self.fasta), "fasta")
+            for homolog in whole_fasta:
+                name, seq = homolog.id, str(homolog.seq)
+                motifs = re.findall(r"H..HC", seq)
+                if len(motifs) == 2:
+                    both_motif_matches.append(name)
 
-        both_motif_matches = list(set(first_motif_matches) & set(second_motif_matches))
+        elif mode=="strict":
+            first_motif_matches = search_motif(self.hits, COPPER, "first_motif")
+            second_motif_matches = search_motif(self.hits, COPPER, "second_motif")
+
+            both_motif_matches = list(set(first_motif_matches) & set(second_motif_matches))
 
         return both_motif_matches
 
