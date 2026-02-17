@@ -38,3 +38,5 @@ If you are using this workflow, please cite the source.
 _Credits to Simon Shaw for providing a scalable solution and setting software development standards for the workflow in antiSMASH. The package is built on [PyHMMER (Larralde et al., 2022), a Python library binding to HMMER (Eddy, 2011)](https://pyhmmer.readthedocs.io/en/stable/index.html)._
 
 __Citation__
+[Computational pipeline reveals nature's untapped reservoir of halogenating enzymes \
+Judit Szenei, Ashleigh Burke, Anne Liong, Aleksandra Korenskaia, April L. Lukowski, Nadine Ziemert, Pablo I. Nikel, Pedro N. Leao, Bradley S. Moore, Tilmann Weber, Kai Blin](https://www.biorxiv.org/content/10.64898/2026.01.20.700248v1)
