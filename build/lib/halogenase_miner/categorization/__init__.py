@@ -1,2 +1,0 @@
-from .family_categorization import EnzymeFamily, FlavinDependent, DimetalCarboxylate, SAMDependent, VanadiumDependent, NonHemeIronDependent
-from .signature_search import align_to_phmm, get_catalytic_residues, search_motif, compare_target_to_known, compare_to_enzyme
