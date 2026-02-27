@@ -7,6 +7,7 @@ The workflow detects and categorizes halogenases across five enzyme families:
 * Dimetal-carboxylate
 * Vanadium-dependent
 
+[Interactive notebook for halogenase annotation and mining](https://colab.research.google.com/drive/1imau-B7BDzHzTjVrzo6vXCOxtDUcKnq7#scrollTo=AWUiYSPxrtwv)
 
 # General categorization
 For the flavin-dependent family, the general workflow relies on the common WxWxI and the Fx.Px.Sx.G motifs for the conventional members,
