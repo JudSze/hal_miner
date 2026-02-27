@@ -5,6 +5,7 @@ The workflow detects and categorizes halogenases across five enzyme families:
 * S-Adenosyl-L-Methionine-dependent
 * Nonheme-iron alphaketoglutarate dependent
 * Dimetal-carboxylate
+* Copper-dependent
 * Vanadium-dependent
 
 [Interactive notebook for halogenase annotation and mining](https://colab.research.google.com/drive/1imau-B7BDzHzTjVrzo6vXCOxtDUcKnq7#scrollTo=AWUiYSPxrtwv)
