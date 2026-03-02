@@ -1,6 +1,6 @@
 
 # Halogenase detection
-The workflow detects and categorizes halogenases across five enzyme families:
+The workflow detects and categorizes halogenases across six enzyme families:
 * Flavin-dependent
 * S-Adenosyl-L-Methionine-dependent
 * Nonheme-iron alphaketoglutarate dependent
