@@ -6,7 +6,7 @@ from halogenase_miner.categorization.signature_search import (
 from halogenase_miner.categorization.family_categorization import EnzymeFamily
 from halogenase_miner.motif_db.motifs import VBPO, COPPER
 
-res = EnzymeFamily("/home/szenei/hal_miner/copper-dependent_hits.fasta")
+res = EnzymeFamily("/lisc/home/user/szenei/Halomethane-Survey/PGAP/coassembly_bin385_PGAP/annot.faa")
 test_coppers=res.copper_dependent.copper_binding_motifs(mode="strict")
 test_coppers
 

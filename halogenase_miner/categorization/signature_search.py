@@ -1,6 +1,6 @@
 import re
 import json
-import pkg_resources
+import importlib.resources
 
 import pyhmmer
 
@@ -17,22 +17,23 @@ def get_family_specifics(enzyme_family):
             non-heme-fe (Non-heme iron alphaketoglutarate-dependent),
             dimetal-carboxylate
     """
-    json_path = pkg_resources.resource_filename('halogenase_miner', 'motif_db/specific_enzymes.json')
+    json_path = importlib.resources.as_file(importlib.resources.files('halogenase_miner').joinpath('motif_db/specific_enzymes.json'))
     with open(json_path) as enzyme_info:
         family_info = json.load(enzyme_info)
     return family_info[f"{enzyme_family}"]
 
-def align_to_phmm(hmm_path, seq_path):
+def align_to_phmm(hmm_resource, seq_path):
     """Align sequences against a pHMM and save the hits
 
     Args:
         hmm_path (str): path to the pHMM file
         seq_path (str): path to the fasta file with protein sequences
     """
-    with pyhmmer.plan7.HMMFile(hmm_path) as hmm_file:
-        hmm = hmm_file.read()
-        with pyhmmer.easel.SequenceFile(seq_path, digital=True) as seq_file:
-            sequences = seq_file.read_block()
+    with importlib.resources.as_file(hmm_resource) as hmm_path:
+        with pyhmmer.plan7.HMMFile(hmm_path) as hmm_file:
+            hmm = hmm_file.read()
+            with pyhmmer.easel.SequenceFile(seq_path, digital=True) as seq_file:
+                sequences = seq_file.read_block()
     pipeline = pyhmmer.plan7.Pipeline(hmm.alphabet)
     hits = pipeline.search_hmm(hmm, sequences)
     return hits

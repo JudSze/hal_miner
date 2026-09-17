@@ -1,27 +1,28 @@
 # do predictive regexes, strict or loose mode
-import pkg_resources
+import importlib.resources
+
 
 class Profiles:
-    fdh_all_conventional = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/FDH_all_conventional.hmm')
-    fdh_unconventional = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/FDH_unconventional.hmm')
-    fdh_cycline_orsellinic = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/FDH_cycline_orsellinic.hmm')
-    fdh_pyrrole = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/FDH_pyrrole.hmm')
-    fdh_trp_5 = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/FDH_trp_5.hmm')
-    fdh_trp_6_7 = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/FDH_trp_6_7.hmm')
-    fdh_tyrosine = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/FDH_tyrosine-like_hpg.hmm')
-    nhfe_indole_alkaloid = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/NHFe_indole_alkaloid.hmm')
-    nhfe_nucleotide = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/NHFe_nucleotide.hmm')
-    nhfe_small_amino_acid = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/NHFe_small_amino_acids.hmm')
-    nhfe_variant_B = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/NHFe_variant_B.hmm')
-    sam_chlorinases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/SAM_chlorinase.hmm')
-    sam_fluorinases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/SAM_fluorinase.hmm')
-    vhpo_general = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/VHPO_general.hmm')
-    vhpo_selective_chloroperoxidases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/VHPO_VCPO_selective.hmm')
-    vhpo_non_selective_chloroperoxidases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/VHPO_VCPO_nonselective.hmm')
-    vhpo_bromoperoxidases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/VHPO_VBPO.hmm')
-    vhpo_iodoperoxidases = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/VHPO_VIPO.hmm')
-    dimetal_carboxylate = pkg_resources.resource_filename('halogenase_miner', 'phmm_db/dimetal-carboxylate.hmm')
-    copper_dependent = pkg_resources.resource_filename('halogenase_miner', "phmm_db/copper-dependent.hmm")
+    fdh_all_conventional = importlib.resources.files('halogenase_miner.phmm_db').joinpath('FDH_all_conventional.hmm')
+    fdh_unconventional = importlib.resources.files('halogenase_miner.phmm_db').joinpath('FDH_unconventional.hmm')
+    fdh_cycline_orsellinic = importlib.resources.files('halogenase_miner.phmm_db').joinpath('FDH_cycline_orsellinic.hmm')
+    fdh_pyrrole = importlib.resources.files('halogenase_miner.phmm_db').joinpath('FDH_pyrrole.hmm')
+    fdh_trp_5 = importlib.resources.files('halogenase_miner.phmm_db').joinpath('FDH_trp_5.hmm')
+    fdh_trp_6_7 = importlib.resources.files('halogenase_miner.phmm_db').joinpath('FDH_trp_6_7.hmm')
+    fdh_tyrosine = importlib.resources.files('halogenase_miner.phmm_db').joinpath('FDH_tyrosine-like_hpg.hmm')
+    nhfe_indole_alkaloid = importlib.resources.files('halogenase_miner.phmm_db').joinpath('NHFe_indole_alkaloid.hmm')
+    nhfe_nucleotide = importlib.resources.files('halogenase_miner.phmm_db').joinpath('NHFe_nucleotide.hmm')
+    nhfe_small_amino_acid = importlib.resources.files('halogenase_miner.phmm_db').joinpath('NHFe_small_amino_acids.hmm')
+    nhfe_variant_B = importlib.resources.files('halogenase_miner.phmm_db').joinpath('NHFe_variant_B.hmm')
+    sam_chlorinases = importlib.resources.files('halogenase_miner.phmm_db').joinpath('SAM_chlorinase.hmm')
+    sam_fluorinases = importlib.resources.files('halogenase_miner.phmm_db').joinpath('SAM_fluorinase.hmm')
+    vhpo_general = importlib.resources.files('halogenase_miner.phmm_db').joinpath('VHPO_general.hmm')
+    vhpo_selective_chloroperoxidases = importlib.resources.files('halogenase_miner.phmm_db').joinpath('VHPO_VCPO_selective.hmm')
+    vhpo_non_selective_chloroperoxidases = importlib.resources.files('halogenase_miner.phmm_db').joinpath('VHPO_VCPO_nonselective.hmm')
+    vhpo_bromoperoxidases = importlib.resources.files('halogenase_miner.phmm_db').joinpath('VHPO_VBPO.hmm')
+    vhpo_iodoperoxidases = importlib.resources.files('halogenase_miner.phmm_db').joinpath('VHPO_VIPO.hmm')
+    dimetal_carboxylate = importlib.resources.files('halogenase_miner.phmm_db').joinpath('dimetal-carboxylate.hmm')
+    copper_dependent = importlib.resources.files('halogenase_miner.phmm_db').joinpath('copper-dependent.hmm')
 
 # DOI: 10.1039/D0CS01551B
 FDHs = {
