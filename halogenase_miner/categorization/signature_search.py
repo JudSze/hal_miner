@@ -98,7 +98,7 @@ def search_motif(hits, family, motif):
     signatures = get_catalytic_residues(hits, family[motif]["region"])
     for protein, signature in signatures.items():
         if re.search(family[motif]["signature"], signature):
-            motif_matches.append(protein.decode("utf-8"))
+            motif_matches.append(protein)
 
     return motif_matches
 
@@ -109,7 +109,7 @@ def compare_to_enzyme(hits, family, enzyme, strict=True):
     if strict:
         for protein, signature in signatures.items():
             if re.search(target_enzyme[enzyme]["signature"], signature):
-                motif_matches.append(protein.decode("utf-8"))
+                motif_matches.append(protein)
 
         return motif_matches
 

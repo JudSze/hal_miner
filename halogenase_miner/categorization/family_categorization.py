@@ -74,7 +74,7 @@ class VanadiumDependent:
             try:
                 if (re.search(VBPO["first_active_site"]["signature"], vbpo_cat_1[protein])
                     and re.search(VBPO["second_active_site"]["signature"], vbpo_cat_2[protein])):
-                    brominases.append(protein.decode("utf-8"))
+                    brominases.append(protein)
             except KeyError:
                 print("protein not in matches")
         return brominases
@@ -85,7 +85,7 @@ class VanadiumDependent:
         for protein, signature in molecular_bridges.items():
             if (re.search(VBPO["intermolecular_bridges"]["first_motif"], signature)
                 or re.search(VBPO["intermolecular_bridges"]["second_motif"], signature)):
-                brominanses_intermol.append(protein.decode("utf-8"))
+                brominanses_intermol.append(protein)
 
         return brominanses_intermol
 
@@ -94,7 +94,7 @@ class VanadiumDependent:
         catalytic_residues = get_catalytic_residues(self.iodinase_hits, VIPO["catalytic_residues"]["region"])
         for protein, signature in catalytic_residues.items():
             if re.search(VIPO["catalytic_residues"]["signature"], signature):
-                iodinases.append(protein.decode("utf-8"))
+                iodinases.append(protein)
 
         return iodinases
 
@@ -103,7 +103,7 @@ class VanadiumDependent:
         catalytic_residues = get_catalytic_residues(self.selective_chloroperoxidase_hits, VCPO["selectivity_residues"]["region"])
         for protein, signature in catalytic_residues.items():
             if re.search(VCPO["selectivity_residues"]["signature"], signature):
-                selective_chlorinases.append(protein.decode("utf-8"))
+                selective_chlorinases.append(protein)
 
         return selective_chlorinases
 
